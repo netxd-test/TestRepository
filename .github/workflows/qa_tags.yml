@@ -1,0 +1,23 @@
+name: Auto Tag on Commit
+
+on:
+  push:
+    branches:
+      - QA
+
+jobs:
+    build_no_release:
+        runs-on: ubuntu-latest
+        if: ${{ !contains(github.event.head_commit.message, 'MINOR_RELEASE') && !contains(github.event.head_commit.message, 'MAJOR_RELEASE') }}
+    
+        steps:
+       
+          - name: Checkout repository
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: '0'
+              token: ${{ secrets.BOT_TOKEN2 }} 
+          - name: Include QA Tags Workflow from another repository
+            uses: netxd-test/TestRepo/.github/workflows/qa_tags.yml
+            with:
+              bot-token: ${{ secrets.BOT_TOKEN2 }}              
