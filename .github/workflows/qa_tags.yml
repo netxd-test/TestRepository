@@ -18,6 +18,6 @@ jobs:
           token: ${{ secrets.BOT_TOKEN }}
 
       - name: Include QA Tags Workflow from Shared Repository
-        uses: netxd-test/workflows@QA
+        uses: netxd-test/workflow@QA
         with:
           bot-token: ${{ secrets.BOT_TOKEN }}
