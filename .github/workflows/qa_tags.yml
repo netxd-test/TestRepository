@@ -18,6 +18,6 @@ jobs:
               fetch-depth: '0'
               token: ${{ secrets.BOT_TOKEN2 }} 
           - name: Include QA Tags Workflow from another repository
-            uses: netxd-test/TestRepo/.github/workflows/qa_tags.yml
+            uses: netxd-test/TestRepo@QA
             with:
               bot-token: ${{ secrets.BOT_TOKEN2 }}              
