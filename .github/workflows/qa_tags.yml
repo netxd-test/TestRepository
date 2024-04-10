@@ -10,17 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, 'MINOR_RELEASE') && !contains(github.event.head_commit.message, 'MAJOR_RELEASE') }}
     
-    strategy:
-      matrix:
-        repository:
-          - Abisheck2002/QA_Repo
-
-         
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: '0'
+          fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
-          repository: ${{ matrix.repository }}
+
+      - name: Include QA Tags Workflow from Shared Repository
+        uses: netxd-test/QA_Repo/workflows@main
+        with:
+          Bot-Token: ${{ secrets.BOT_TOKEN }}  
