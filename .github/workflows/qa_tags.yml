@@ -17,7 +17,9 @@ jobs:
           fetch-depth: '0'
           token: ${{ secrets.BOT_TOKEN }}
 
-      - name: Include QA Tags Workflow from Shared Repository
-        uses: netxd-test/QA_Repo/workflows@main
+      - name: Use Custom Action from Another Repository
+        uses: actions/checkout@v4 
         with:
-          Bot-Token: ${{ secrets.BOT_TOKEN }}
+          repository: netxd-test/QA_Repo
+          ref: main
+          token: ${{ secrets.BOT_TOKEN }}
