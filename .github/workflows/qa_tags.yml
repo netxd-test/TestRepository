@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         repository:
-          - QA_Repo
+          - Abisheck2002/QA_Repo
 
          
 
