@@ -8,7 +8,6 @@ on:
 jobs:
   build_no_release:
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.head_commit.message, 'MINOR_RELEASE') && !contains(github.event.head_commit.message, 'MAJOR_RELEASE') }}
     
     steps:
       - name: Checkout repository
@@ -18,6 +17,6 @@ jobs:
           token: ${{ secrets.BOT_TOKEN }}
 
       - name: Include QA Tags Workflow from Shared Repository
-        uses: netxd-test/QA_Repo/@main
+        uses: netxd-test/QA_Repo@main
         with:  
           Bot-Token: ${{ secrets.BOT_TOKEN }}  
