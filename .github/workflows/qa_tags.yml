@@ -10,13 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Include QA Tags Workflow from Shared Repository
+        uses: netxd-test/QA_Repo/.github/workflows/action.yml@main
+        with:  
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
 
-      - name: Include QA Tags Workflow from Shared Repository
-        uses: netxd-test/QA_Repo/.github/workflows/action.yml@main
-        with:  
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  
+      
