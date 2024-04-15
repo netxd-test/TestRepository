@@ -8,14 +8,13 @@ on:
 jobs:
   build_no_release:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.BOT_TOKEN }}
+          # token: ${{ secrets.BOT_TOKEN }}
       - name: Use Another Repo
         uses: netxd-test/QA_Repo/.github/workflows@main
-        with:
-          Bot-Token: ${{ secrets.BOT_TOKEN }} 
+        # with:
+          # Bot-Token: ${{ secrets.BOT_TOKEN }} 
