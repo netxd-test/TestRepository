@@ -1,5 +1,4 @@
 name: Auto Tag on Commit
-
 on:
   push:
     branches:
@@ -7,16 +6,15 @@ on:
 
 jobs:
   build_no_release:
-    name: Test
-    runs:
-      using: "composite"
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
-            token: ${{ secrets.BOT_TOKEN }}
-        - name: Use Another Repo
-          uses: netxd-test/QA_Repo/.github@main
-          with:
-            Bot-Token: ${{ secrets.BOT_TOKEN }}
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN }}
+      - name: Use Another Repo
+        uses: netxd-test/QA_Repo/.github@main
+        with:
+          Bot-Token: ${{ secrets.BOT_TOKEN }} 
