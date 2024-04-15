@@ -16,6 +16,6 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
 
-          uses: netxd-test/QA_Repo/.github@main
+          uses: netxd-test/QA_Repo/workflows@main
           with:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
