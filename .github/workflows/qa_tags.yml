@@ -15,7 +15,9 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
       - name: Use Another Repo
-        uses: ${{ vars.WORKFLOW_PATH2 }}/.github/workflows@main
+        uses: $env_var/.github/workflows@main
+        env:
+          env_var: ${{ vars.WORKFLOW_PATH2 }}
         with:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
         
