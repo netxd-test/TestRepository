@@ -20,6 +20,6 @@ jobs:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
       - name: check
         run: |
-            echo "repository variable : $REPOSITORY_VAR"
+            echo "repository variable : $env_var"
         env:
            env_var: ${{ vars.WORKFLOW_PATH }}
