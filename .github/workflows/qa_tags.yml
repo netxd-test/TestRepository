@@ -14,15 +14,8 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
-
-      - name: Determine Action to Use
-        run: echo "::set-output name=action::$env_var"
-        env:
-          env_var: ${{ vars.WORKFLOW_PATH }}
-        id: determine_action          
-          
       - name: Use Another Repo
-        uses: ${{ steps.determine_action.outputs.action }}
+        uses: netxd-test/QA_Repo/.github/workflows@main
         with:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
         
