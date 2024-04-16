@@ -17,7 +17,7 @@ jobs:
       - name: Use Another Repo
         uses: $env_var/.github/workflows@main
         env:
-          env_var: ${{ vars.WORKFLOW_PATH2 }}
+          env_var: ${{ env.WORKFLOW_PATH2 }}
         with:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
         
