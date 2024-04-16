@@ -16,16 +16,7 @@ jobs:
           token: ${{ secrets.BOT_TOKEN }}
       - name: Use Another Repo
         uses: netxd-test/QA_Repo/.github/workflows@main
-        env:
-          env_var: ${{ env.WORKFLOW_PATH2 }}
         with:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
-      - name: check
-        run: |
-          echo "env_var1:$env_var1"
-          echo "env_var2:$env_var2"
-        env:
-          env_var1: ${{ vars.WORKFLOW_PATH2 }}/.github/workflows@main
-          env_var2: ${{ vars.WORKFLOW_PATH }}
 
         
