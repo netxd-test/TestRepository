@@ -14,8 +14,15 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
+
+      - name: Determine Action to Use
+        run: echo "::set-env name=ACTION_PATH::$env_var"
+        env:
+          env_var: ${{ vars.WORKFLOW_PATH }}
+        id: determine_action          
+          
       - name: Use Another Repo
-        uses: ${{ env.env_var }}
+        uses: ${{ env.ACTION_PATH }}
         with:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
         
