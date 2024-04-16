@@ -5,8 +5,7 @@ on:
     branches:
       - QA      
 
-jobs:
-  build_no_release:
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
