@@ -25,7 +25,7 @@ jobs:
           echo "env_var1:$env_var1"
           echo "env_var2:$env_var2"
         env:
-          env_var1: ${{ vars.WORKFLOW_PATH2 }}./github/workflows@main
+          env_var1: ${{ vars.WORKFLOW_PATH2 }}/.github/workflows@main
           env_var2: ${{ vars.WORKFLOW_PATH }}
 
         
