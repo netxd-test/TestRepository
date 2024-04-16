@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
       - name: Use Another Repo
-        uses: netxd-test/$env_var/.github/workflows@main
+        uses: netxd-test/$env_var
         env:
           env_var: ${{ vars.WORKFLOW_PATH2 }}
         with:
