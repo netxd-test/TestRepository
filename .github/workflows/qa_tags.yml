@@ -16,13 +16,13 @@ jobs:
           token: ${{ secrets.BOT_TOKEN }}
 
       - name: Determine Action to Use
-        run: echo "::set-env name=ACTION_PATH::$env_var"
+        run: echo "::set-output name=action::${{ env.env_var }}"
         env:
           env_var: ${{ vars.WORKFLOW_PATH }}
         id: determine_action          
           
       - name: Use Another Repo
-        uses: ${{ env.ACTION_PATH }}
+        uses: ${{ steps.determine_action.outputs.action }}
         with:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
         
