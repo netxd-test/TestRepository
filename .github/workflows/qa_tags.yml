@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.BOT_TOKEN }}
 
       - name: Determine Action to Use
-        run: echo "::set-output name=action::${{ env.env_var }}"
+        run: echo "::set-output name=action::$env_var"
         env:
           env_var: ${{ vars.WORKFLOW_PATH }}
         id: determine_action          
