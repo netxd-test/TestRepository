@@ -6,7 +6,7 @@ on:
       - QA      
 
 jobs:
-  build_no_release:
+  build_generate_tag:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
