@@ -3,10 +3,7 @@ name: Auto Tag on Commit
 on:
   push:
     branches:
-      - QA
-
-env:
-  env_var: ${{ vars.WORKFLOW_PATH }}      
+      - QA      
 
 jobs:
   build_no_release:
@@ -19,5 +16,7 @@ jobs:
           token: ${{ secrets.BOT_TOKEN }}
       - name: Use Another Repo
         uses: $env_var
+        env:
+          env_var: ${{ vars.WORKFLOW_PATH }}
         with:
           Bot-Token: ${{ secrets.BOT_TOKEN }} 
