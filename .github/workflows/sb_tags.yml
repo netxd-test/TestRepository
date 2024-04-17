@@ -1,0 +1,23 @@
+name: Auto Tag on Commit
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - SB
+  
+
+jobs:
+  build_SB_PULL_REQUEST:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+          token: ${{ secrets.BOT_TOKEN2 }}
+      - name: Use Another Repo
+        uses: netxd-test/QA_Repo/.github/workflows@main
+        with:
+           Bot-Token: ${{ secrets.BOT_TOKEN }}           
